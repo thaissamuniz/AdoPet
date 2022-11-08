@@ -1,0 +1,46 @@
+.header {
+    width: 100%;
+    height: 100px;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: baseline;
+
+    &__a--home {
+        margin-right: 59px;
+        margin-left: 48px;
+    }
+
+    &__logo--tab {
+        display: none;
+    }
+}
+
+.header__a--user {
+    position: absolute;
+    right: 3px;
+    margin-right: 37px;
+
+}
+
+@media screen and (min-width: 768px) {
+
+
+    .header {
+
+        align-items: flex-start;
+
+        &__logo--tab {
+            display: block;
+            margin-left: 49px;
+            margin-right: 65px;
+           
+        }
+
+        &__a--home {
+            margin-left: 0;
+            margin-right: 69px;
+        }
+    }
+}

@@ -1,0 +1,118 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "image": "./assets/img/Imagem Dunga.svg",
+      "name": "Dunga",
+      "age": "2 anos",
+      "size": "Porte pequeno",
+      "description": "bonitinho, fofinho",
+      "local": "Rio de Janeiro (RJ)",
+      "categorie_id": 1
+    },
+    {
+      "id": 2,
+      "image": "./assets/img/ImagemFelicia.svg",
+      "name": "Felicia",
+      "age": "3 meses",
+      "size": "Porte pequeno",
+      "description": "Ativa e carinhosa",
+      "local": "Nova Iguacu (RJ)",
+      "categorie_id": 2
+    },
+    {
+      "id": 3,
+      "image": "./assets/img/Imagemsirius.svg",
+      "name": "Sirius",
+      "age": "6 meses",
+      "size": "Porte grande",
+      "description": "Ativo e educado",
+      "local": "Duque de Caxias (RJ)",
+      "categorie_id": 1
+    },
+    {
+      "id": 4,
+      "image": "./assets/img/ImagemFiona.svg",
+      "name": "Fiona",
+      "age": "3 anos",
+      "size": "Porte pequeno",
+      "description": "Calma e carinhosa",
+      "local": "Sao Goncalo (RJ)",
+      "categorie_id": 1
+    },
+    {
+      "id": 5,
+      "image": "./assets/img/ImagemSid.svg",
+      "name": "Sid",
+      "age": "8 meses",
+      "size": "Porte medio/grande",
+      "description": "Brincalhao e amavel",
+      "local": "Rio de Janeiro (RJ)",
+      "categorie_id": 1
+    },
+    {
+      "id": 6,
+      "image": "./assets/img/ImagemYoda.svg",
+      "name": "Yoda",
+      "age": "1 ano",
+      "size": "Porte medio",
+      "description": "Ativo e carinhoso",
+      "local": "Nova Iguacu (RJ)",
+      "categorie_id": 2
+    },
+    {
+      "id": 7,
+      "image": "./assets/img/ImagemLua.svg",
+      "name": "Lua",
+      "age": "6 meses",
+      "size": "Porte medio",
+      "description": "Ativo e carinhosa",
+      "local": "Duque de Caxias (RJ)",
+      "categorie_id": 2
+    },
+    {
+      "id": 8,
+      "image": "./assets/img/ImagemAmora.svg",
+      "name": "Amora",
+      "age": "45 dias",
+      "size": "Porte grande",
+      "description": "Calma e carinhosa",
+      "local": "Sao Goncalo (RJ)",
+      "categorie_id": 1
+    },
+    {
+      "id": 9,
+      "image": "./assets/img/ImagemZelda.svg",
+      "name": "Zelda",
+      "age": "5 meses",
+      "size": "Porte medio",
+      "description": "Ativa e amavel",
+      "local": "Rio de Janeiro (RJ)",
+      "categorie_id": 2
+    }
+  ],
+  "profiles": [
+    {
+      "name": "marcia",
+      "tel": "2195959595",
+      "local": "Rio de Janeiro",
+      "about": "sou a marcia",
+      "id": 1
+    },
+    {
+      "email": "maria@gmail.com",
+      "profileName": "maria",
+      "password": "87654321",
+      "id": 2
+    },
+    {
+      "email": "Thaiissa.Muniiz@gmail.com",
+      "name": "Thaissa Muniz",
+      "password": "11111111",
+      "tel": "2121212",
+      "local": "sao joao de meriti",
+      "about": "eu sou legak",
+      "id": 3
+    }
+  ]
+}

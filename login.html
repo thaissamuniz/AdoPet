@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Adopet</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+    <header class="header">
+        <img src="assets/img/icons/Logo-tab.svg" alt="logo da AdoPet" class="header__logo--tab">
+        <a href="index.html" class="header__a--home"><img src="assets/img/icons/home.svg" alt="home"></a>
+        <a href="#" class="header__a--msg"><img src="assets/img/icons/msg.svg" alt="mensagem"></a>
+        <span class="header__special"></span>
+
+    </header>
+    <main class="main">
+
+        <div class="main__content">
+            <h1><img src="assets/img/Logo.svg" alt="logo da AdoPet" class="main__logo"></h1>
+            <h2 class="main__title">Já tem conta? Faça seu login:</h2>
+        </div>
+
+            <form class="main__form" >
+                
+                <label for="email" class="main__label">Email</label>
+                <input type="text" id="email" class="main__input email" required placeholder="Insira seu email">
+
+                <label for="password" class="main__label">Senha</label>
+                <input type="password" id="password" class="main__input password" required placeholder="Insira sua senha">
+                <a href="forgotPassword.html" class="forgot__pass">esqueci minha senha</a>
+
+                <button type="submit" class="button">Entrar</button>
+            </form>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__title">2022 - Desenvolvido por Thaissa</p>
+    </footer>
+</body>
+
+<script type="module" src="./js/loginPage.js"></script>
+
+</html>

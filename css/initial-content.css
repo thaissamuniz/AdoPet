@@ -1,0 +1,132 @@
+@charset "UTF-8";
+body {
+  background-color: #3772FF;
+}
+
+.home {
+  background-image: url(../assets/img/Forma\ 2.svg);
+  background-position: right;
+  background-position-y: 55px;
+  background-repeat: no-repeat;
+}
+
+.home__sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.teste {
+  display: flex;
+  flex-direction: column;
+}
+
+.home__logo {
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.home__title {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  line-height: 48px;
+  font-size: 26px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.home__text {
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  margin-left: 56px;
+  margin-right: 56px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+.home__subtitle--alt {
+  display: none;
+}
+
+.home__button {
+  background-color: #FC7071;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  text-align: center;
+  width: 180px;
+  height: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  border: 1px solid #FC7071;
+}
+
+.home__illustration {
+  background-image: url(../assets/img/Ilustração\ 1.svg);
+  background-repeat: no-repeat;
+  width: 247px;
+  height: 295px;
+}
+
+@media screen and (min-width: 768px) {
+  .home {
+    background-size: 120px;
+    background-position-y: -10px;
+  }
+  .home__logo {
+    width: 252px;
+    margin-top: 115px;
+    margin-bottom: 40px;
+  }
+  .home__title {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+  .home__subtitle {
+    display: none;
+  }
+  .home__subtitle--alt {
+    display: block;
+    margin-left: 214px;
+    margin-right: 210px;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 38px;
+  }
+  .home__button {
+    width: 344px;
+    height: 48px;
+    margin-left: 212px;
+    margin-right: 212px;
+    font-size: 18px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .home__illustration {
+    width: 338px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .home__logo {
+    width: 260px;
+  }
+  .home__subtitle--alt {
+    margin-left: 417px;
+    margin-right: 417px;
+  }
+  .home__button {
+    width: 362px;
+  }
+}
+
+/*# sourceMappingURL=initial-content.css.map */

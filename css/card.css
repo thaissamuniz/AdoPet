@@ -1,0 +1,117 @@
+.main {
+  background-image: none;
+}
+
+.main__title {
+  text-align: center;
+  margin-left: 67px;
+  margin-right: 67px;
+  margin-bottom: 22px;
+  display: inline;
+}
+
+.card {
+  background-color: #F7F7F7;
+  display: flex;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+.card__name {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3772FF;
+  margin-bottom: 8px;
+}
+.card__img {
+  margin-top: 24px;
+  margin-right: 16px;
+  margin-bottom: 24px;
+}
+.card__details {
+  margin-top: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #737380;
+}
+.card__descrip {
+  margin-bottom: 30px;
+}
+.card__location {
+  margin-bottom: 7px;
+}
+.card__msg {
+  font-size: 10px;
+  line-height: 16px;
+  text-decoration: none;
+  color: #737380;
+  display: flex;
+  align-items: flex-start;
+}
+.card__img--msg {
+  margin-right: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    padding-right: 32px;
+    padding-left: 32px;
+    box-sizing: border-box;
+  }
+
+  .main__title--span {
+    display: block;
+  }
+
+  .main__title {
+    margin-top: 132px;
+    margin-bottom: 32px;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+
+  .card {
+    width: 48%;
+    margin-right: 16px;
+  }
+  .card:nth-child(2n) {
+    margin-right: 0;
+  }
+  .card__details {
+    color: #444444;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .main {
+    padding-left: 160px;
+    padding-right: 160px;
+    box-sizing: border-box;
+    background-image: url(../assets/img/Forma\ 2.svg);
+  }
+
+  .main__title {
+    margin-top: 47px;
+    margin-bottom: 32px;
+  }
+
+  .main__title--span {
+    display: inline;
+  }
+
+  .card {
+    width: 31%;
+  }
+  .card:nth-child(2n) {
+    margin-right: 16px;
+  }
+  .card:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+/*# sourceMappingURL=card.css.map */

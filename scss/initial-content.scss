@@ -1,0 +1,155 @@
+$coral: #FC7071;
+$white: #fff;
+$primary-blue: #3772FF;
+
+body {
+    background-color: $primary-blue;
+}
+.home {
+    background-image: url(../assets/img/Forma\ 2.svg);
+    background-position: right;
+    background-position-y: 55px;
+    background-repeat: no-repeat;
+}
+
+.home__sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teste {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.home__logo {
+    margin-top: 20px;
+    margin-bottom: 24px;
+
+}
+
+.home__title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    line-height: 48px;
+    font-size: 26px;
+    color: $white;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.home__text {
+    font-weight: 400;
+    color: $white;
+    text-align: center;
+    margin-left: 56px;
+    margin-right: 56px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+.home__subtitle--alt {
+    display: none;
+}
+
+.home__button {
+    background-color: $coral;
+    display: block;
+    text-decoration: none;
+    color: $white;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    text-align: center;
+    width: 180px;
+    height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    border: 1px solid $coral;
+    
+    
+}
+
+.home__illustration {
+    background-image: url(../assets/img/Ilustração\ 1.svg);
+    background-repeat: no-repeat;
+    width: 247px;
+    height: 295px;
+}
+
+@media  screen and (min-width: 768px) {
+    
+    .home {
+
+        background-size: 120px;
+        background-position-y: -10px;
+
+        &__logo {
+            width: 252px;
+            margin-top: 115px;
+            margin-bottom: 40px;
+        }
+
+
+        &__title {
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+
+        &__subtitle {
+            display: none;
+        }
+
+        &__subtitle--alt {
+            display: block;
+            margin-left: 214px;
+            margin-right: 210px;
+            font-size: 18px;
+            line-height: 26px;
+            margin-bottom: 38px;
+        }
+
+        &__button {
+            width: 344px;
+            height: 48px;
+            margin-left: 212px;
+            margin-right: 212px;
+            font-size: 18px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        &__illustration {
+            width: 338px;
+        }
+
+    }
+
+}
+
+
+@media screen and (min-width: 1440px) {
+
+    .home {
+
+        &__logo {
+            width: 260px;
+        }
+
+        &__subtitle--alt {
+            margin-left: 417px;
+            margin-right: 417px;
+        }
+
+        &__button {
+            width: 362px;
+        }
+    }
+}

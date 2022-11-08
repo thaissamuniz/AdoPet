@@ -1,0 +1,23 @@
+.forgot__pass {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  text-align: center;
+  color: #FC7071;
+  margin-top: 8px;
+}
+
+.button {
+  margin-bottom: 247px;
+}
+
+.main__logo {
+  margin-bottom: 57px;
+}
+
+.main__title {
+  margin-bottom: 32px;
+  font-family: "Poppins", sans-serif;
+}
+
+/*# sourceMappingURL=login.css.map */

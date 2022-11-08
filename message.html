@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopet</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <img src="assets/img/icons/Logo-tab.svg" alt="logo da AdoPet" class="header__logo--tab">
+        <a href="home.html" class="header__a--home"><img src="assets/img/icons/home.svg" alt="icone home"></a>
+        <a href="message.html" class="header__a--msg"><img src="assets/img/icons/msg.svg"
+                alt="icone de mensagem"></a>
+        <a href="profile.html" class="header__a--user"><img src="assets/img/icons/Usuário.svg"
+                alt="icone do usuário"></a>
+
+    </header>
+    <main class="main__forms">
+
+
+        <h2 class="main__title">Envie uma mensagem para a pessoa ou instituição que está cuidado do animal:</h2>
+
+        <form class="forms">
+            <label for="" class="forms__label">Nome</label>
+            <input type="text" required placeholder="Insira seu nome completo" class="forms__input name">
+
+            <label for="" class="forms__label">telefone</label>
+            <input type="tel" required placeholder="Insira seu telefone e/ou whatsapp" class="forms__input tel">
+
+            <label for="" class="forms__label">Nome do animal</label>
+            <input type="text" required placeholder="Por qual animal voce se interessou?" class="forms__input animalName">
+
+            <label for="message" class="forms__label">Mensagem</label>
+            <textarea name="message" id="message" cols="30" rows="10" required placeholder="Escreva sua mensagem"
+                class="forms__txt"></textarea>
+
+            <button class="button">Salvar</button>
+        </form>
+    </main>
+    <footer class="footer">
+        <p class="footer__title">2022 - Desenvolvido por Thaissa</p>
+    </footer>
+</body>
+<script type="module" src="./js/message.js"></script>
+
+</html>

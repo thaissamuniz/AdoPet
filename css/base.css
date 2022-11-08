@@ -1,0 +1,64 @@
+body {
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  background-image: url(../assets/img/Forma\ 1.svg);
+  background-repeat: no-repeat;
+  padding-top: 48px;
+  box-sizing: border-box;
+}
+
+.main__title {
+  color: #3772FF;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-bottom: 4px;
+}
+
+.button {
+  width: 148px;
+  height: 40px;
+  background-color: #FC7071;
+  border-radius: 6px;
+  margin-top: 24px;
+  margin-bottom: 105px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px 32px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-size: 543px;
+    padding-top: 64px;
+  }
+
+  main {
+    background-image: url(../assets/img/Forma\ 2.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 134px;
+  }
+
+  .main__title {
+    font-size: 18px;
+    line-height: 26px;
+    margin-left: 121px;
+    margin-right: 122px;
+  }
+
+  .button {
+    margin-top: 40px;
+    width: 164px;
+  }
+}
+
+/*# sourceMappingURL=base.css.map */
