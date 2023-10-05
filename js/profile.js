@@ -1,20 +1,16 @@
 import { apps } from "./index.js";
 
-// const getUrl = new URL(window.location);
-// const id = getUrl.searchParams.get('id');
-
 const user = JSON.parse(localStorage.user);
 const userID = user.id;
 const userEmail = user.email;
 const userPass = user.password;
 
-console.log(userPass);
-
-
-console.log(userEmail);
-console.log(userID);
 
 let formEl = document.querySelector('.forms');
+let profImgEl = document.querySelector('#prof__pic');
+console.log(profImgEl.attributes.src.value);
+let profPic = profImgEl.attributes.src.value;
+
 let nameEl = document.querySelector('.name');
 let telEl = document.querySelector('.tel');
 let localEl = document.querySelector('.local');
@@ -26,7 +22,7 @@ const profileDetail = (userID) => {
     return fetch(`http://localhost:3000/profiles/${userID}`)
         .then(response => {
             return response.json()
-        })
+        });
 }
 
 
@@ -55,24 +51,17 @@ profileDetail(userID).then(data => {
     idEl.value = data.id;
 });
 
+function readImage() {
+    if (this.files && this.files[0]) {
+        var file = new FileReader();
+        file.onload = function (e) {
+            document.getElementById("prof__pic").src = e.target.result;
+        };
+        file.readAsDataURL(this.files[0]);
+    }
+}
 
-// apps.profilesList().then(data => {
-
-//     //const profile = data[0];
-//     // nameEl.value = profile.name
-
-//     if (data.tel) {
-//         telEl.value = data.tel;
-//     }
-//     if (data.local) {
-//         localEl.value = data.local
-//     }
-//     if (data.about) {
-//         aboutEl.value = data.about
-
-//     }
-//     idEl.value = data.id
-// })
+document.getElementById("prof").addEventListener("change", readImage, false);
 
 
 formEl.addEventListener('submit', (e) => {
@@ -81,6 +70,8 @@ formEl.addEventListener('submit', (e) => {
     apps.update(userEmail, nameEl.value, userPass, telEl.value, localEl.value, aboutEl.value, userID).then(() => {
         console.log('ok');
     })
-})
+});
+
+
 
 

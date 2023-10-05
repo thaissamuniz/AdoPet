@@ -1,61 +1,8 @@
+import { apps } from "./index.js";
 
 const form = document.querySelector('.main__form');
 const password = document.querySelector('.password');
-
-import { apps } from "./index.js";
-
-/// const profileListEmail = (email) => {
-///     return fetch(`http://localhost:3000/profiles?email=${email}`)
-///         .then(response => {
-///             return response.json()
-///         })
-/// }
-
-
-
-window.addEventListener('load', () => {
-    if (localStorage.getItem('user')) {
-        const userString = localStorage.getItem('user')
-        const user = JSON.parse(userString)
-        location.href = '../home.html'
-    } else {
-        
-    }
-})
-
-
-
-
-
-// profileListEmail(email).then(data => {
-//     data.find(mail => {
-//         if (mail === data.email) {
-//             location.href = '../home.html'
-//         } else {
-//             location.href = '../login.html'
-//         }
-//     })
-
-// })
-
-
-// const userString = localStorage.getItem('user')
-
-// if (userString) {
-//     const user = JSON.parse(userString)
-//     if (user.email) {
-
-//         // consultar no servidor por esse email /profiles?email=${email}
-
-//         // e validar se existe
-
-//         //caso exista redirecionar para a página home
-
-
-//         //caso não exista, limpar o valor na chave do usuário
-//     }
-
-// }
+const btn = document.getElementById('btn');
 
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
@@ -77,24 +24,25 @@ form.addEventListener('submit', (evt) => {
                 localStorage.setItem('user', profileString)
 
 
-                window.location.href = '../home.html'
-            } else {
-                let divMsg = document.createElement('div');
-                divMsg.innerHTML = 'email ou senha inválidos'
-                form.appendChild(divMsg);
-            }
+                window.location.href = '../home.html';
 
+            }
 
         });
 
-    })
-
+    });
 
 
     if (!apps.validateEmail(email.value) || !apps.validateData(password.value)) {
-        console.log('formato de email, senha ou nome invalidos')
+        console.log('formato de email, senha ou nome invalidos');
+        let divMsg = document.createElement('div');
+        divMsg.style.marginBottom = '100px';
+        divMsg.style.color = 'red';
+        divMsg.innerHTML = 'email ou senha inválidos';
+        btn.style.marginBottom = '130px';
+        form.appendChild(divMsg);
+
     }
 
-
-})
+});
 

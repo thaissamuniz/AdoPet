@@ -78,6 +78,11 @@ body {
   height: 295px;
 }
 
+.home__button--sign {
+  font-size: 14px;
+  color: #FC7071;
+}
+
 @media screen and (min-width: 768px) {
   .home {
     background-size: 120px;

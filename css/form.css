@@ -120,6 +120,10 @@ body {
   color: #fc7071;
 }
 
+input[type="file"] {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .main__title {
     margin-left: 122px;

@@ -39,19 +39,22 @@
         <form class="forms">
 
             <h3 class="profile__title">Perfil</h3>
-            <label for="" class="forms__label">Foto</label>
+            <label class="forms__label">Foto</label>
             <div class="profile">
-                <img src="./assets/img/ImagemAmora.svg" alt="foto de perfil" class="profile__pic">
+                <input type="file" id="prof">
+                <label for="prof">
+                    <img src="./assets/img/icons/Usuário.svg" alt="foto de perfil" class="profile__pic" id="prof__pic">
+                </label>
                 <p class="profile__p">Clique na foto para editar</p>
             </div>
 
             <input class="id" type="number">
 
             <label for="" class="forms__label">Nome</label>
-            <input type="text" required class="forms__input name" >
+            <input type="text" required class="forms__input name">
 
             <label for="" class="forms__label">Telefone</label>
-            <input type="tel" class="forms__input tel" >
+            <input type="tel" class="forms__input tel">
 
             <label for="" class="forms__label">Cidade</label>
             <input type="text" class="forms__input local">

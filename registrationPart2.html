@@ -35,23 +35,29 @@
             <h1><img src="assets/img/Logo.svg" alt="logo da AdoPet" class="main__logo"></h1>
             <h2 class="main__title">Ainda não tem cadastro?</h2>
             <p class="main__title">Então, antes de buscar seu melhor amigo, precisamos de alguns dados:</p>
-        
+
             <form action="" class="main__form">
-                <label for="email" class="main__label">Email</label>
-                <input type="text" id="email" class="main__input email" required placeholder="Escolha seu melhor email">
+                <label for="email" class="main__label">Você é: </label>
+                <select class="main__input">
+                    <option value="" class="main__option">escolha uma das opções...</option>
+                    <option value="tutor" class="main__option">tutor</option>
+                    <option value="abrigo" class="main__option">abrigo</option>
 
-                <label for="name" class="main__label">Nome</label>
-                <input type="text" id="name" class="main__input name" required placeholder="Digite seu nome completo">
+                </select>
+
+                <label for="user__state" class="main__label">Estado</label>
+                <input type="text" id="user__state" class="main__input user__state"
+                    placeholder="Digite seu nome completo">
 
 
-                <label for="password" class="main__label">Senha</label>
-                <input type="password" id="password" class="main__input password pass" required placeholder="Crie uma senha">
+                <label for="user__city" class="main__label">Cidade</label>
+                <input type="text" id="user__city" class="main__input user__city" placeholder="Informe sua cidade">
 
-                <label for="confirmPassword" class="main__label">Confirme sua senha</label>
-                <input type="password" id="confirmPassword" class="main__input password confirmPass" required
-                    placeholder="Repita a senha criada a cima">
+                <label for="user__phone" class="main__label">Celular</label>
+                <input type="tel" id="user__phone" class="main__input user__phone"
+                    placeholder="(21) 99999-9999">
 
-                <button type="submit" class="button">Próximo</button>
+                <button type="submit" class="button">Cadastrar</button>
             </form>
         </div>
 

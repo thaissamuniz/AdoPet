@@ -93,26 +93,22 @@
   ],
   "profiles": [
     {
-      "name": "marcia",
-      "tel": "2195959595",
-      "local": "Rio de Janeiro",
-      "about": "sou a marcia",
+      "email": "maria@gmail.com",
+      "name": "Maria",
+      "password": "12345678",
+      "tel": "55455",
+      "local": "",
+      "about": "",
       "id": 1
     },
     {
-      "email": "maria@gmail.com",
-      "profileName": "maria",
-      "password": "87654321",
-      "id": 2
-    },
-    {
       "email": "Thaiissa.Muniiz@gmail.com",
-      "name": "Thaissa Muniz",
+      "name": "any",
       "password": "11111111",
-      "tel": "2121212",
-      "local": "sao joao de meriti",
-      "about": "eu sou legak",
-      "id": 3
+      "tel": "",
+      "local": "",
+      "about": "",
+      "id": 2
     }
   ]
 }

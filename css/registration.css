@@ -68,11 +68,20 @@ body {
   box-sizing: border-box;
 }
 
+.main__input, select {
+  color: #737380;
+}
+
 .main__input::placeholder {
   color: #BCBCBC;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
+}
+
+.main__option {
+  font-size: 20px;
+  color: #737380;
 }
 
 @media screen and (min-width: 768px) {

@@ -1,5 +1,3 @@
-
-
 const profilesList = () => {
     return fetch(`http://localhost:3000/profiles`)
         .then(response => {
@@ -8,7 +6,7 @@ const profilesList = () => {
 }
 
 
-const createProfile = (email, name, password, telefone, cidade, sobre) => {
+const createProfile = (email, name, password, tel, local, about, id) => {
     return fetch(`http://localhost:3000/profiles`, {
         method: 'POST',
         headers: {
@@ -18,21 +16,15 @@ const createProfile = (email, name, password, telefone, cidade, sobre) => {
             email: email,
             name: name,
             password: password,
-            telefone: telefone,
-            cidade: cidade,
-            sobre: sobre
+            tel: tel,
+            local: local,
+            about: about,
+            id: id
         })
     }).then(response => {
         return response.body
-    })
+    });
 }
-
-// const profileDetail = (id) => {
-//     return fetch(`http://localhost:3000/profiles/${id}`)
-//         .then(response => {
-//             return response.json()
-//         })
-// }
 
 const update = (email, name, password, tel, local, about, id) => {
 
@@ -47,7 +39,7 @@ const update = (email, name, password, tel, local, about, id) => {
             password: password,
             tel: tel,
             local: local,
-            about: about
+            about: about,
         })
     }).then(resp => {
         return resp.json()
@@ -63,7 +55,7 @@ function validateEmail(mail) {
 }
 
 function validateData(data) {
-    if (data === "" || data === undefined || data === null || data.length != 8) {
+    if (data === "" || data === undefined || data === null || data.length < 8) {
         return false
     }
     return true;
@@ -71,6 +63,17 @@ function validateData(data) {
 
 function redirectPage() {
     location.href = 'home.html'
+}
+
+async function getAnimals() {
+    try {
+        const response = await fetch('http://localhost:3000/pets');
+        const responseJson = await response.json();
+        return responseJson;
+
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 
@@ -81,5 +84,6 @@ export const apps = {
     profilesList,
     createProfile,
     //profileDetail,
-    update
+    update,
+    getAnimals
 }

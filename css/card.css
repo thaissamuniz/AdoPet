@@ -14,7 +14,7 @@
   background-color: #F7F7F7;
   display: flex;
   box-sizing: border-box;
-  margin-bottom: 16px;
+  min-width: 360px;
 }
 .card__name {
   font-weight: 600;
@@ -53,6 +53,13 @@
   margin-right: 8px;
 }
 
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
 @media screen and (min-width: 768px) {
   .main {
     padding-right: 32px;
@@ -70,17 +77,14 @@
   }
 
   .cards {
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 60px;
+    gap: 16px;
   }
 
   .card {
     width: 48%;
-    margin-right: 16px;
-  }
-  .card:nth-child(2n) {
-    margin-right: 0;
   }
   .card__details {
     color: #444444;
@@ -105,12 +109,6 @@
 
   .card {
     width: 31%;
-  }
-  .card:nth-child(2n) {
-    margin-right: 16px;
-  }
-  .card:nth-child(3n) {
-    margin-right: 0;
   }
 }
 

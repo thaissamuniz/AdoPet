@@ -1,27 +1,22 @@
-const animalsList = () => {
-    return fetch('http://localhost:3000/animals')
-        .then(response => {
-            return response.json()
-        })
-}
+import { apps } from "../index.js";
 
 const cards = document.createElement('div');
 cards.classList.add('cards');
 
-function newCard(image, name, age, size, description, local) {
+function newCard(name, age, size, description, city, state) {
     const main = document.querySelector('.main');
     const article = document.createElement('article');
     article.classList.add('card');
 
     const template =
         `
-    <img src="${image}" alt="Foto do bichinho" class="card__img">
+    <img src="../../../assets/img/Imagem Dunga.svg" alt="Foto do bichinho" class="card__img">
     <div class="card__details">
         <h3 class="card__name"> ${name} </h3>
         <p class="card__age details">${age}</p>
         <p class="card__size details">${size}</p>
         <p class="card__descrip details">${description}</p>
-        <p class="card__location details">${local}</p>
+        <p class="card__location details">${city} - ${state}</p>
         <a href="message.html" class="card__msg"><span><img src="assets/img/icons/ícone mensagem.svg"
                     alt="icone fale com o responsavel" class="card__img--msg"></span>Falar com
             responsável</a>
@@ -35,4 +30,12 @@ function newCard(image, name, age, size, description, local) {
     return cards;
 }
 
-animalsList().then(data => data.forEach(card => newCard(card.image, card.name, card.age, card.size, card.description, card.local)))
+async function createCards() {
+    let animais = await apps.getAnimals();
+
+    animais.forEach(animal => {
+        newCard(animal.name, animal.age, animal.size, animal.details, animal.city, animal.state);
+    });
+}
+
+createCards();
