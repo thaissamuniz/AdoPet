@@ -55,7 +55,7 @@ function validateEmail(mail) {
 }
 
 function validateData(data) {
-    if (data === "" || data === undefined || data === null || data.length < 8) {
+    if (data === "" || data === undefined || data === null || data.length < 6) {
         return false
     }
     return true;
@@ -74,6 +74,10 @@ async function getAnimals() {
     } catch (error) {
         console.error(error);
     }
+}
+
+async function login(email, senha) {
+    
 }
 
 

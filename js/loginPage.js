@@ -1,48 +1,45 @@
 import { apps } from "./index.js";
 
 const form = document.querySelector('.main__form');
-const password = document.querySelector('.password');
-const btn = document.getElementById('btn');
+const emailInput = document.querySelector('.email');
 
-form.addEventListener('submit', (evt) => {
-    evt.preventDefault();
-
-    const email = document.querySelector('.email');
-
-    apps.profilesList().then(profiles => {
-
-        profiles.find(profile => {
-
-            if (profile.email === email.value && profile.password === password.value) {
-
-                //delete profile.password
-                delete profile.cidade
-                delete profile.telefone
-                delete profile.sobre
-
-                const profileString = JSON.stringify(profile)
-                localStorage.setItem('user', profileString)
-
-
-                window.location.href = '../home.html';
-
-            }
-
-        });
-
-    });
-
-
-    if (!apps.validateEmail(email.value) || !apps.validateData(password.value)) {
-        console.log('formato de email, senha ou nome invalidos');
-        let divMsg = document.createElement('div');
-        divMsg.style.marginBottom = '100px';
-        divMsg.style.color = 'red';
-        divMsg.innerHTML = 'email ou senha inválidos';
-        btn.style.marginBottom = '130px';
-        form.appendChild(divMsg);
-
+emailInput.addEventListener('focusout', () => {
+    let divMessage = document.querySelector('.main__error--msg');
+    if (!apps.validateEmail(emailInput.value)) {
+        divMessage.innerHTML = 'formato de email inválido';
+        divMessage.style.display = 'block';
+    } else {
+        divMessage.style.display = 'none';
     }
-
 });
 
+form.addEventListener('submit', async e => {
+    e.preventDefault();
+
+    const password = document.querySelector('.password');
+
+    const userEmail = emailInput.value;
+    const userPassword = password.value;
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            email: userEmail,
+            password: userPassword
+        })
+    }
+    const response = await fetch('http://localhost:3000/login/user', requestOptions);
+    const div = document.querySelector('.main__login--msg');
+    if (response.status !== 200) {
+        div.innerHTML = 'email ou senha inválidos.';
+        div.style.display = 'block';
+    } else {
+        const responseText = await response.text();
+        localStorage.setItem("token", responseText.slice(9));
+        div.style.display = 'none';
+        location.href = '../home.html';
+    }
+});

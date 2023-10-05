@@ -20,4 +20,18 @@
   font-family: "Poppins", sans-serif;
 }
 
+.main__error--msg {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #FC7071;
+  display: none;
+}
+
+.main__login--msg {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #FC7071;
+  display: none;
+}
+
 /*# sourceMappingURL=login.css.map */

@@ -22,3 +22,17 @@ $coral: #FC7071;
     margin-bottom: 32px;
     font-family: 'Poppins', sans-serif;
 }
+
+.main__error--msg {
+    font-size: 14px;
+    margin-top: 10px;
+    color: $coral;
+    display: none;
+}
+
+.main__login--msg {
+    font-size: 14px;
+    margin-top: 10px;
+    color: $coral;
+    display: none;
+}
