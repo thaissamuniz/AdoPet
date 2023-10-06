@@ -68,7 +68,8 @@ body {
   box-sizing: border-box;
 }
 
-.main__input, select {
+.main__input,
+select {
   color: #737380;
 }
 
@@ -82,6 +83,13 @@ body {
 .main__option {
   font-size: 20px;
   color: #737380;
+}
+
+.error__msg {
+  font-size: 14px;
+  margin-top: 10px;
+  color: red;
+  display: none;
 }
 
 @media screen and (min-width: 768px) {

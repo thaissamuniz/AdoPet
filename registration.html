@@ -35,23 +35,61 @@
             <h1><img src="assets/img/Logo.svg" alt="logo da AdoPet" class="main__logo"></h1>
             <h2 class="main__title">Ainda não tem cadastro?</h2>
             <p class="main__title">Então, antes de buscar seu melhor amigo, precisamos de alguns dados:</p>
-        
-            <form action="" class="main__form">
+
+            <form action="" method="post" class="main__form">
                 <label for="email" class="main__label">Email</label>
-                <input type="text" id="email" class="main__input email" required placeholder="Escolha seu melhor email">
+                <input type="text" id="email" class="main__input email" required placeholder="Escolha seu melhor email"
+                    autocomplete="email" autofocus>
+                <div>
+                    <p class="email__error error__msg"></p>
+                </div>
 
                 <label for="name" class="main__label">Nome</label>
                 <input type="text" id="name" class="main__input name" required placeholder="Digite seu nome completo">
-
+                <div>
+                    <p class="name__error error__msg"></p>
+                </div>
 
                 <label for="password" class="main__label">Senha</label>
-                <input type="password" id="password" class="main__input password pass" required placeholder="Crie uma senha">
-
+                <input type="password" id="password" class="main__input password pass" required
+                    placeholder="Crie uma senha" autocomplete="new-password">
+                <div>
+                    <p class="password__error error__msg"></p>
+                </div>
                 <label for="confirmPassword" class="main__label">Confirme sua senha</label>
                 <input type="password" id="confirmPassword" class="main__input password confirmPass" required
-                    placeholder="Repita a senha criada a cima">
+                    placeholder="Repita a senha criada a cima" autocomplete="new-password">
+                <div>
+                    <p class="error__msg confirmPassword__error"></p>
+                </div>
 
-                <button type="submit" class="button">Próximo</button>
+                <label for="" class="main__label">Você é: </label>
+                <select class="main__input" id="accountType">
+                    <option value="" class="main__option">escolha uma das opções...</option>
+                    <option value="tutor" class="main__option">tutor</option>
+                    <option value="abrigo" class="main__option">abrigo</option>
+                </select>
+                <div>
+                    <p class="error__msg accountType__error"></p>
+                </div>
+
+                <!-- <label for="user__state" class="main__label">Estado</label>
+                <input type="text" id="userState" class="main__input user__state" placeholder="Qual seu estado?">
+                <div>
+                    <p class="error__msg state__error"></p>
+                </div>
+
+                <label for="user__city" class="main__label">Cidade</label>
+                <input type="text" id="userCity" class="main__input user__city" placeholder="Informe sua cidade">
+                <div>
+                    <p class="error__msg city__error"></p>
+                </div>
+                <label for="user__phone" class="main__label">Celular</label>
+                <input type="tel" id="userPhone" class="main__input user__phone" placeholder="(21) 99999-9999">
+                <div>
+                    <p class="error__msg phone__error"></p>
+                </div> -->
+                <button type="submit" class="button">Enviar</button>
             </form>
         </div>
 
