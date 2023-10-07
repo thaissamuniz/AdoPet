@@ -1,7 +1,16 @@
 import { apps } from "../index.js";
 
+const profile = document.querySelector('.header__a--user');
 const cards = document.createElement('div');
 cards.classList.add('cards');
+
+profile.addEventListener('click', () => {
+    if (!localStorage.getItem("token")) {
+        window.location = '../../login.html';
+    } else {
+        window.location = '../../profile.html';
+    }
+});
 
 function newCard(name, age, size, description, city, state) {
     const main = document.querySelector('.main');

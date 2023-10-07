@@ -100,12 +100,38 @@ select {
     display: none;
 }
 
-// .email__error,
-// .name__error,
-// .password__error,
-// .confirmPassword__error {
-//     display: none;
-// }
+.main__info {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #bdf8e8;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.main__info--msg {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.main__info--link {
+    padding: 12px;
+    background-color: #FC7071;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.main__info--close {
+    font-weight: bold;
+    color: red;
+    align-self: end;
+    cursor: pointer;
+}
 
 
 @media screen and (min-width: 768px) {
@@ -159,5 +185,9 @@ select {
 
     .main__logo {
         margin-top: 0;
+    }
+
+    .main__info {
+        padding: 35px;
     }
 }

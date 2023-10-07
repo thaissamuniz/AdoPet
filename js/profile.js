@@ -1,77 +1,55 @@
 import { apps } from "./index.js";
 
-const user = JSON.parse(localStorage.user);
-const userID = user.id;
-const userEmail = user.email;
-const userPass = user.password;
-
-
-let formEl = document.querySelector('.forms');
-let profImgEl = document.querySelector('#prof__pic');
-console.log(profImgEl.attributes.src.value);
-let profPic = profImgEl.attributes.src.value;
-
 let nameEl = document.querySelector('.name');
 let telEl = document.querySelector('.tel');
 let localEl = document.querySelector('.local');
 let aboutEl = document.getElementById('message');
 let idEl = document.querySelector('.id');
+let form = document.querySelector('.forms');
 
 
-const profileDetail = (userID) => {
-    return fetch(`http://localhost:3000/profiles/${userID}`)
-        .then(response => {
-            return response.json()
-        });
-}
+const userToken = localStorage.getItem("token");
+const token = userToken.slice(0, (userToken.length - 1));
 
+const getUserInfo = async () => {
+    const res = await fetch(`http://localhost:3000/users/${"651f54043f9b841ec69ce06d"}`);
+    const resJson = await res.json();
+    console.log(resJson);
 
-profileDetail(userID).then(data => {
-    nameEl.value = data.name;
-
-    if (data.tel) {
-        telEl.value = data.tel;
-    } else {
-        telEl.placeholder = 'digite um número para contato';
+    if (resJson.name) {
+        nameEl.value = resJson.name;
     }
-
-
-    if (data.local) {
-        localEl.value = data.local;
-    } else {
-        localEl.placeholder = 'digite aqui sua cidade';
+    if (resJson.tel) {
+        telEl.value = resJson.tel;
     }
-
-    if (data.about) {
-        aboutEl.value = data.about;
-    } else {
-        aboutEl.placeholder = 'diga algo legal sobre você'
+    if (resJson.city) {
+        localEl.value = resJson.city;
     }
-
-    idEl.value = data.id;
-});
-
-function readImage() {
-    if (this.files && this.files[0]) {
-        var file = new FileReader();
-        file.onload = function (e) {
-            document.getElementById("prof__pic").src = e.target.result;
-        };
-        file.readAsDataURL(this.files[0]);
+    if (resJson.about) {
+        aboutEl.value = resJson.about;
     }
 }
+getUserInfo();
 
-document.getElementById("prof").addEventListener("change", readImage, false);
-
-
-formEl.addEventListener('submit', (e) => {
+form.addEventListener('submit', async e => {
     e.preventDefault();
+    const requestOptions = {
+        method: 'PUT',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: nameEl.value,
+            tel: telEl.value,
+            city: localEl.value,
+            about: aboutEl.value
+        })
+    }
 
-    apps.update(userEmail, nameEl.value, userPass, telEl.value, localEl.value, aboutEl.value, userID).then(() => {
-        console.log('ok');
-    })
+    const res = await fetch(`http://localhost:3000/users/${"651f54043f9b841ec69ce06d"}`, requestOptions);
+    if (res.status == 200) {
+        alert('dados atualizados com sucesso!');
+    } else {
+        alert('erro ao atualizar os dados.');
+    }
 });
-
-
-
-

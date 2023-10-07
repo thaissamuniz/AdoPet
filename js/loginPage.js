@@ -32,6 +32,7 @@ form.addEventListener('submit', async e => {
         })
     }
     const response = await fetch('http://localhost:3000/login/user', requestOptions);
+    
     const div = document.querySelector('.main__login--msg');
     if (response.status !== 200) {
         div.innerHTML = 'email ou senha inválidos.';

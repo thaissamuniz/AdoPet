@@ -13,6 +13,7 @@ const nameError = document.querySelector('.name__error');
 const passError = document.querySelector('.password__error');
 const confirmPassError = document.querySelector('.confirmPassword__error');
 const accountTypeError = document.querySelector('.accountType__error');
+const msg = document.querySelector('.main__info');
 
 emailInput.addEventListener('focusout', () => {
     if (!apps.validateEmail(emailInput.value)) {
@@ -84,6 +85,11 @@ form.addEventListener('submit', async e => {
     if (response.status == 401) {
         alert("email já cadastrato. por favor, informe um novo email.");
     } else {
+        msg.style.display = 'flex';
         alert("cadastro realizado com sucesso! vá até a pagina de login e informe suas credenciais.");
     }
+});
+
+closeInfo.addEventListener('click', () => {
+    msg.style.display = 'none';
 });
