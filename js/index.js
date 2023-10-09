@@ -1,3 +1,33 @@
+async function getAnimals() {
+    try {
+        const response = await fetch('http://localhost:3000/pets');
+        const responseJson = await response.json();
+        return responseJson;
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function login(email, password) {
+    try {
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+        }
+        const response = await fetch('http://localhost:3000/login/user', requestOptions);
+        return response;
+    } catch (error) {
+
+    }
+}
+
 const profilesList = () => {
     return fetch(`http://localhost:3000/profiles`)
         .then(response => {
@@ -65,20 +95,6 @@ function redirectPage() {
     location.href = 'home.html'
 }
 
-async function getAnimals() {
-    try {
-        const response = await fetch('http://localhost:3000/pets');
-        const responseJson = await response.json();
-        return responseJson;
-
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-async function login(email, senha) {
-    
-}
 
 
 export const apps = {
@@ -89,5 +105,6 @@ export const apps = {
     createProfile,
     //profileDetail,
     update,
-    getAnimals
+    getAnimals,
+    login
 }

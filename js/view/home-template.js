@@ -1,15 +1,15 @@
 import { apps } from "../index.js";
+import { utils } from "../utils.js";
 
 const profile = document.querySelector('.header__a--user');
 const cards = document.createElement('div');
 cards.classList.add('cards');
 
 profile.addEventListener('click', () => {
-    if (!localStorage.getItem("token")) {
-        window.location = '../../login.html';
-    } else {
-        window.location = '../../profile.html';
-    }
+    utils.checkLogin('../../profile.html');
+});
+messageBox.addEventListener('click', () => {
+    utils.checkLogin('../../message.html');
 });
 
 function newCard(name, age, size, description, city, state) {

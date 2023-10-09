@@ -17,23 +17,13 @@ form.addEventListener('submit', async e => {
     e.preventDefault();
 
     const password = document.querySelector('.password');
+    const div = document.querySelector('.main__login--msg');
 
     const userEmail = emailInput.value;
     const userPassword = password.value;
 
-    const requestOptions = {
-        method: 'POST',
-        headers: {
-            'Content-type': 'application/json'
-        },
-        body: JSON.stringify({
-            email: userEmail,
-            password: userPassword
-        })
-    }
-    const response = await fetch('http://localhost:3000/login/user', requestOptions);
-    
-    const div = document.querySelector('.main__login--msg');
+    const response = await apps.login(userEmail, userPassword);
+
     if (response.status !== 200) {
         div.innerHTML = 'email ou senha inválidos.';
         div.style.display = 'block';
