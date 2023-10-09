@@ -1,11 +1,12 @@
 import { apps } from "./index.js";
+import { utils } from "./utils.js";
 
 const form = document.querySelector('.main__form');
 const emailInput = document.querySelector('.email');
 
 emailInput.addEventListener('focusout', () => {
     let divMessage = document.querySelector('.main__error--msg');
-    if (!apps.validateEmail(emailInput.value)) {
+    if (!utils.validateEmail(emailInput.value)) {
         divMessage.innerHTML = 'formato de email inválido';
         divMessage.style.display = 'block';
     } else {

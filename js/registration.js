@@ -1,4 +1,5 @@
 import { apps } from "./index.js";
+import { utils } from "./utils.js";
 
 const form = document.querySelector('.main__form');
 
@@ -17,7 +18,7 @@ const accountTypeError = document.querySelector('.accountType__error');
 const msg = document.querySelector('.main__info');
 
 emailInput.addEventListener('focusout', () => {
-    if (!apps.validateEmail(emailInput.value)) {
+    if (!utils.validateEmail(emailInput.value)) {
         emailError.innerHTML = 'insira um email válido.';
         emailError.style.display = 'block';
     } else {
@@ -66,7 +67,7 @@ accountType.addEventListener('focusout', () => {
 
 form.addEventListener('submit', async e => {
     e.preventDefault();
-    if (nameInput.value.length < 3 || (!apps.validateEmail(emailInput.value) || !apps.validateData(passwordInput.value)) || (passwordInput.value != confPassInput.value)) {
+    if (nameInput.value.length < 3 || (!utils.validateEmail(emailInput.value) || !utils.validateData(passwordInput.value)) || (passwordInput.value != confPassInput.value)) {
         return
     }
 
