@@ -110,12 +110,7 @@ select {
 }
 
 .main__info--link {
-  padding: 12px;
-  background-color: #FC7071;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
+  color: #FC7071;
 }
 
 .main__info--close {

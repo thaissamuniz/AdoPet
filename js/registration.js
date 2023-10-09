@@ -7,6 +7,7 @@ const nameInput = document.querySelector('.name');
 const passwordInput = document.querySelector('.password');
 const confPassInput = document.querySelector('.confirmPass');
 const accountType = document.querySelector('#accountType');
+const msgP = document.querySelector('.main__info--msg');
 
 const emailError = document.querySelector('.email__error');
 const nameError = document.querySelector('.name__error');
@@ -68,25 +69,14 @@ form.addEventListener('submit', async e => {
     if (nameInput.value.length < 3 || (!apps.validateEmail(emailInput.value) || !apps.validateData(passwordInput.value)) || (passwordInput.value != confPassInput.value)) {
         return
     }
-    const requestOptions = {
-        method: 'POST',
-        headers: {
-            'Content-type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: nameInput.value,
-            email: emailInput.value,
-            password: passwordInput.value,
-            accountType: accountType.value,
-            role: role,
-        })
-    }
-    const response = await fetch('http://localhost:3000/users', requestOptions);
+
+    const response = await apps.createUser(nameInput.value, emailInput.value, passwordInput.value, accountType.value, role);
     if (response.status == 401) {
-        alert("email já cadastrato. por favor, informe um novo email.");
-    } else {
+        msgP.innerHTML = `email já cadastrado. por favor, informe um novo email.`;
         msg.style.display = 'flex';
-        alert("cadastro realizado com sucesso! vá até a pagina de login e informe suas credenciais.");
+    } else {
+        msgP.innerHTML = `cadastro concluido com sucesso! <a href="login.html" class="main__info--link">clique aqui para fazer login</a>`;
+        msg.style.display = 'flex';
     }
 });
 

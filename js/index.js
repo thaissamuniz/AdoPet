@@ -56,33 +56,52 @@ async function updateUser(id, name, tel, local, about) {
     }
 }
 
-const profilesList = () => {
-    return fetch(`http://localhost:3000/profiles`)
-        .then(response => {
-            return response.json()
-        })
-}
-
-
-const createProfile = (email, name, password, tel, local, about, id) => {
-    return fetch(`http://localhost:3000/profiles`, {
+async function createUser(name, email, password, accountType, role) {
+    const requestOptions = {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
         },
         body: JSON.stringify({
-            email: email,
             name: name,
+            email: email,
             password: password,
-            tel: tel,
-            local: local,
-            about: about,
-            id: id
+            accountType: accountType,
+            role: role,
         })
-    }).then(response => {
-        return response.body
-    });
+    }
+    const response = await fetch('http://localhost:3000/users', requestOptions);
+    return response;
 }
+
+
+// const profilesList = () => {
+//     return fetch(`http://localhost:3000/profiles`)
+//         .then(response => {
+//             return response.json()
+//         })
+// }
+
+
+// const createProfile = (email, name, password, tel, local, about, id) => {
+//     return fetch(`http://localhost:3000/profiles`, {
+//         method: 'POST',
+//         headers: {
+//             'Content-type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             email: email,
+//             name: name,
+//             password: password,
+//             tel: tel,
+//             local: local,
+//             about: about,
+//             id: id
+//         })
+//     }).then(response => {
+//         return response.body
+//     });
+// }
 
 const update = (email, name, password, tel, local, about, id) => {
 
@@ -129,12 +148,13 @@ export const apps = {
     validateData,
     validateEmail,
     redirectPage,
-    profilesList,
-    createProfile,
+    // profilesList,
+    // createProfile,
     //profileDetail,
     update,
     getAnimals,
     login,
     getUser,
-    updateUser
+    updateUser,
+    createUser
 }
