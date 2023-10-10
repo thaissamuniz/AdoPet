@@ -30,7 +30,15 @@ form.addEventListener('submit', async e => {
         div.style.display = 'block';
     } else {
         const responseText = await response.text();
-        localStorage.setItem("token", responseText.slice(9));
+        const responseJson = JSON.parse(responseText);
+
+        for (const key in responseJson) {
+            if (responseJson.hasOwnProperty.call(responseJson, key)) {
+                const element = responseJson[key];
+                localStorage.setItem(`${key}`, element);
+            }
+        }
+
         div.style.display = 'none';
         location.href = '../home.html';
     }

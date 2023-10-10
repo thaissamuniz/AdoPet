@@ -22,9 +22,10 @@ function validateData(data) {
 function redirectPage() {
     location.href = 'home.html'
 }
+
 export const utils = {
     checkLogin,
     validateEmail,
     validateData,
-    redirectPage
+    redirectPage,
 }
