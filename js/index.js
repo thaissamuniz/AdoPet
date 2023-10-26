@@ -9,6 +9,43 @@ async function getAnimals() {
     }
 }
 
+async function updateAnimal(id, name, age, size, city, state, details) {
+    try {
+        const requestOptions = {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                age: age,
+                size: size,
+                city: city,
+                state: state,
+                details: details
+            })
+        }
+
+        const response = await fetch(`http://localhost:3000/pets/${id}`, requestOptions);
+        // const responseJson = await response.json();
+        return response;
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function getAnimalById(id) {
+    try {
+        const response = await fetch(`http://localhost:3000/pets/${id}`);
+        const responseJson = await response.json();
+        return responseJson;
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 async function login(email, password) {
     try {
         const requestOptions = {
@@ -77,6 +114,8 @@ async function createUser(name, email, password, accountType, role) {
 
 export const apps = {
     getAnimals,
+    getAnimalById,
+    updateAnimal,
     login,
     getUser,
     updateUser,

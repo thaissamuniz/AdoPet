@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopet</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <img src="assets/img/icons/Logo-tab.svg" alt="logo da AdoPet" class="header__logo--tab">
+        <a href="home.html" class="header__a--home"><img src="assets/img/icons/home.svg" alt="icone home"></a>
+        <a href="message.html" class="header__a--msg"><img src="assets/img/icons/msg.svg" alt="icone de mensagem"></a>
+        <a href="profile.html" class="header__a--user"><img src="assets/img/icons/Usuário.svg"
+                alt="icone do usuário"></a>
+
+    </header>
+    <main class="main__forms">
+
+
+        <h2 class="main__title">Conte um pouco sobre o animal:</h2>
+
+        <form class="forms" id="petForm">
+            <img src="./assets/img/Imagem Dunga.svg" alt="Foto do bicinho" class="card__img">
+            <label for="" class="forms__label">Nome</label>
+            <input type="text" id="petName" required placeholder="Insira o nome do bichinho" class="forms__input">
+
+            <label for="" class="forms__label">Idade</label>
+            <input type="text" id="petAge" required placeholder="Insira a idade do bichinho" class="forms__input">
+
+            <label for="" class="forms__label">Tamanho</label>
+            <input type="text" id="petSize" required placeholder="Insira o porte do animal"
+                class="forms__input animalName">
+
+            <label for="" class="forms__label">Cidade</label>
+            <input type="text" id="petCity" required placeholder="De onde o bichinho é?"
+                class="forms__input animalName">
+
+            <label for="" class="forms__label">Estado</label>
+            <input type="text" id="petState" required placeholder="Insira o estado" class="forms__input animalName">
+
+            <label for="petDetails" class="forms__label">Descrição</label>
+            <textarea name="petDetails" id="petAbout" id="petDetails" cols="30" rows="10" required
+                placeholder="Diga algo que todos devem saber sobre o bichinho" class="forms__txt"></textarea>
+
+            <button class="button" id="sendBtn">Salvar</button>
+        </form>
+    </main>
+    <footer class="footer">
+        <p class="footer__title">2022 - Desenvolvido por Thaissa</p>
+    </footer>
+</body>
+<script type="module" src="./js/editPage.js"></script>
+
+</html>

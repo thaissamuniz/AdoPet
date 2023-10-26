@@ -52,6 +52,17 @@
 .card__img--msg {
   margin-right: 8px;
 }
+.card__edit {
+  display: none;
+}
+.card__edit--admin {
+  display: block;
+  height: 20px;
+  background-image: url("../assets/img/icons/pen (1).png");
+  background-size: 18px;
+  background-repeat: no-repeat;
+  margin-left: 80%;
+}
 
 .cards {
   display: flex;

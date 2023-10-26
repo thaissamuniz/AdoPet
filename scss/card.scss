@@ -65,6 +65,19 @@ $details-light-grey: #F7F7F7;
         margin-right: 8px;
     }
 
+    &__edit {
+        display: none;
+    }
+
+    &__edit--admin {
+        display: block;
+        height: 20px;
+        background-image: url('../assets/img/icons/pen\ \(1\).png');
+        background-size: 18px;
+        background-repeat: no-repeat;
+        margin-left: 80%;
+    }
+
 }
 
 .cards {
@@ -100,7 +113,7 @@ $details-light-grey: #F7F7F7;
     }
 
     .card {
-        
+
         width: 48%;
 
         &__details {
