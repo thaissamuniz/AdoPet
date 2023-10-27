@@ -12,9 +12,12 @@
 
 .card {
   background-color: #F7F7F7;
-  display: flex;
   box-sizing: border-box;
   min-width: 360px;
+}
+.card__contents {
+  display: flex;
+  width: 340px;
 }
 .card__name {
   font-weight: 600;
@@ -34,6 +37,7 @@
   font-size: 14px;
   line-height: 20px;
   color: #737380;
+  width: 160px;
 }
 .card__descrip {
   margin-bottom: 30px;
@@ -88,14 +92,18 @@
   }
 
   .cards {
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 60px;
     gap: 16px;
+    align-items: inherit;
   }
 
   .card {
     width: 48%;
+    height: 224px;
+    max-width: 450px;
   }
   .card__details {
     color: #444444;

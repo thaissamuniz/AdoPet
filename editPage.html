@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/editPage.css">
     <link rel="stylesheet" href="css/footer.css">
 
 </head>
@@ -32,31 +33,58 @@
     </header>
     <main class="main__forms">
 
-
         <h2 class="main__title">Conte um pouco sobre o animal:</h2>
 
-        <form class="forms" id="petForm">
-            <img src="./assets/img/Imagem Dunga.svg" alt="Foto do bicinho" class="card__img">
+        <form class="forms" method="post" id="petForm">
+            <img src="./assets/img/Imagem Dunga.svg" alt="Foto do bicinho" class="card__img card__img--edit">
             <label for="" class="forms__label">Nome</label>
-            <input type="text" id="petName" required placeholder="Insira o nome do bichinho" class="forms__input">
-
+            <input type="text" id="petName" required placeholder="Insira o nome do bichinho" class="forms__input"
+                autofocus>
+            <div>
+                <p id="petNameError" class="petName__error petError"></p>
+            </div>
             <label for="" class="forms__label">Idade</label>
             <input type="text" id="petAge" required placeholder="Insira a idade do bichinho" class="forms__input">
-
+            <div>
+                <p id="petAgeError" class="petAge__error petError"></p>
+            </div>
             <label for="" class="forms__label">Tamanho</label>
-            <input type="text" id="petSize" required placeholder="Insira o porte do animal"
-                class="forms__input animalName">
+            <select name="petSizeOptions" id="petSizeOptions" class="forms__input">
+                <option value=""></option>
+                <option value="pequeno">pequeno</option>
+                <option value="médio">médio</option>
+                <option value="grande">grande</option>
+            </select>
+            <div>
+                <p id="petSizeError" class="petSize__error petError"></p>
+            </div>
+            <div class="form__location">
+                <div>
+                    <label for="" class="forms__label">Cidade</label>
+                    <input type="text" id="petCity" required placeholder="De onde o bichinho é?"
+                        class="forms__input animalName">
+                    <div>
+                        <p id="petCityError" class="petCity__error petError"></p>
+                    </div>
+                </div>
+                <div>
 
-            <label for="" class="forms__label">Cidade</label>
-            <input type="text" id="petCity" required placeholder="De onde o bichinho é?"
-                class="forms__input animalName">
-
-            <label for="" class="forms__label">Estado</label>
-            <input type="text" id="petState" required placeholder="Insira o estado" class="forms__input animalName">
+                    <label for="" class="forms__label">Estado</label>
+                    <select id="statesSelect">
+                        <option value=""></option>
+                    </select>
+                    <div>
+                        <p id="petStateError" class="petState__error petError"></p>
+                    </div>
+                </div>
+            </div>
 
             <label for="petDetails" class="forms__label">Descrição</label>
             <textarea name="petDetails" id="petAbout" id="petDetails" cols="30" rows="10" required
                 placeholder="Diga algo que todos devem saber sobre o bichinho" class="forms__txt"></textarea>
+            <div>
+                <p id="petAboutError" class="petAbout__error petError"></p>
+            </div>
 
             <button class="button" id="sendBtn">Salvar</button>
         </form>

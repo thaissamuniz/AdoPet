@@ -1,25 +1,125 @@
 import { apps } from "../js/index.js";
 const url = new URL(window.location);
 const id = url.searchParams.get('id');
+const idAdmin = localStorage.getItem('id');
+const states = ["AC",
+    "AL",
+    "AP",
+    "AM",
+    "BA",
+    "CE",
+    "DF",
+    "ES",
+    "GO",
+    "MA",
+    "MT",
+    "MS",
+    "MG",
+    "PA",
+    "PB",
+    "PR",
+    "PE",
+    "PI",
+    "RJ",
+    "RN",
+    "RS",
+    "RO",
+    "RR",
+    "SC",
+    "SP",
+    "SE",
+    "TO"
+];
+
+petName.addEventListener('focusout', () => {
+    if (petName.value.length < 3) {
+        petNameError.innerHTML = 'o nome é obrigatório e deve conter ao menos 3 letras.';
+        return false;
+    } else {
+        petNameError.innerHTML = '';
+    }
+});
+petAge.addEventListener('focusout', () => {
+    if (petAge.value == '') {
+        petAgeError.innerHTML = 'a idade do bichinho é obrigatória';
+    } else {
+        petAgeError.innerHTML = '';
+    }
+});
+petSizeOptions.addEventListener('focusout', () => {
+    if (petSizeOptions.value == '') {
+        petSizeError.innerHTML = 'selecione o tamanho.'
+    } else {
+        petSizeError.innerHTML = '';
+    }
+})
+petCity.addEventListener('focusout', () => {
+    if (petCity.value.length < 3) {
+        petCityError.innerHTML = 'escreva uma cidade válida.';
+    } else {
+        petCityError.innerHTML = '';
+    }
+});
+petAbout.addEventListener('focusout', () => {
+    if (petAbout.value.length < 3) {
+        petAboutError.innerHTML = 'diga algo legal sobre o bichinho.';
+    } else {
+        petAboutError.innerHTML = '';
+    }
+});
+
+statesSelect.addEventListener('focusout', () => {
+    if (statesSelect.value == "") {
+        petStateError.innerHTML = 'selecione o estado.';
+        return false;
+    } else {
+        petStateError.innerHTML = '';
+    }
+});
+
+
+states.forEach(state => {
+    const option = `<option value ="${state}">${state}</option>`
+    statesSelect.innerHTML += option;
+});
 
 async function getAnimalById() {
     let animal = await apps.getAnimalById(id);
 
     petName.value = animal.name;
     petAge.value = animal.age;
-    petSize.value = animal.size;
+    petSizeOptions.value = animal.size;
     petCity.value = animal.city;
-    petState.value = animal.state;
+    statesSelect.value = animal.state;
     petAbout.value = animal.details;
 }
-getAnimalById();
 
 async function updateAnimal() {
-    await apps.updateAnimal(id, petName.value, petAge.value, petSize.value, petCity.value, petState.value, petAbout.value);
+    await apps.updateAnimal(id, petName.value, petAge.value, petSizeOptions.value, petCity.value, statesSelect.value, petAbout.value);
 }
 
-petForm.addEventListener('submit', e => {
-    e.preventDefault();
+async function createAnimal() {
+    return await apps.createAnimal(petName.value, petAge.value, petSizeOptions.value, petCity.value, statesSelect.value, petAbout.value, idAdmin);
 
-    updateAnimal();
-});
+}
+
+if (id) {
+    getAnimalById();
+    petForm.addEventListener('submit', async e => {
+        e.preventDefault();
+        await updateAnimal();
+    });
+} else {
+    petForm.addEventListener('submit', async e => {
+        e.preventDefault();
+        console.log(petName.value, petAge.value, petSizeOptions.value, petCity.value, statesSelect.value, petAbout.value, idAdmin);
+        const response = await createAnimal();
+        if (response.status == 201) {
+            alert('animal cadastrado com sucesso.');
+        } else {
+            console.log(response)
+            console.log(response.status)
+            alert('erro ao cadastrar animal. todos os campos são obrigatórios.');
+        }
+    });
+}

@@ -17,10 +17,13 @@ $details-light-grey: #F7F7F7;
 .card {
 
     background-color: $details-light-grey;
-    display: flex;
     box-sizing: border-box;
-    // margin-bottom: 16px;
     min-width: 360px;
+
+    &__contents {
+        display: flex;
+        width: 340px;
+    }
 
     &__name {
         font-weight: 600;
@@ -42,6 +45,7 @@ $details-light-grey: #F7F7F7;
         font-size: 14px;
         line-height: 20px;
         color: $details-dark-grey;
+        width: 160px;
     }
 
     &__descrip {
@@ -106,20 +110,23 @@ $details-light-grey: #F7F7F7;
     }
 
     .cards {
+        justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
         margin-bottom: 60px;
         gap: 16px;
+        align-items: inherit;
     }
 
     .card {
 
         width: 48%;
+        height: 224px;
+        max-width: 450px;
 
         &__details {
             color: #444444;
         }
-
     }
 }
 

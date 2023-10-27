@@ -1,5 +1,8 @@
 import { apps } from "./index.js";
 
+const role = localStorage.getItem("role");
+role == "admin" ? createPet.style.display = "flex" : createPet.style.display = "none";
+
 let name = document.querySelector('.name');
 let tel = document.querySelector('.tel');
 let local = document.querySelector('.local');

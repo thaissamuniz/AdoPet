@@ -1,0 +1,19 @@
+#createPet {
+    display: none;
+    align-self: flex-end;
+    margin-right: 29px;
+
+}
+
+#createPetIcon {
+    background-image: url('../assets/img/icons/add.png');
+    background-size: 40px;
+    background-repeat: no-repeat;
+    width: 42px;
+    height: 42px;
+    transition: background-size 0.2s ease-out;
+
+    &:hover {
+        background-size: 42px;
+    }
+}

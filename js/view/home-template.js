@@ -24,20 +24,25 @@ function newCard(name, age, size, description, city, state, id) {
 
     const template =
         `
-    <img src="../../../assets/img/Imagem Dunga.svg" alt="Foto do bichinho" class="card__img">
-    <div class="card__details">
-        <div>
-            <a class="${editClass}" id="edit" href="editPage.html?id=${id}"></a>
-        </div>
-        <h3 class="card__name"> ${name} </h3>
-        <p class="card__age details">${age}</p>
-        <p class="card__size details">${size}</p>
-        <p class="card__descrip details">${description}</p>
-        <p class="card__location details">${city} - ${state}</p>
-        <a href="message.html" class="card__msg"><span><img src="assets/img/icons/ícone mensagem.svg"
-                    alt="icone fale com o responsavel" class="card__img--msg"></span>Falar com
-            responsável</a>
-    </div>`
+          <div class="card__contents">
+            <img src="../../../assets/img/Imagem Dunga.svg" alt="Foto do bichinho" class="card__img">
+            <div class="card__details">
+                <div>
+                    <a class="${editClass}" id="edit" href="editPage.html?id=${id}"></a>
+                </div>
+                <h3 class="card__name"> ${name} </h3>
+                <p class="card__age details">${age}</p>
+                <p class="card__size details">${size}</p>
+                <p class="card__descrip details">${description}</p>
+                <p class="card__location details">${city} - ${state}</p>
+                <a href="message.html" class="card__msg"><span><img src="assets/img/icons/ícone mensagem.svg"
+                            alt="icone fale com o responsavel" class="card__img--msg"></span>Falar com
+                    responsável</a>
+            </div>
+          </div>
+        `
+
+
 
     article.innerHTML = template;
 
