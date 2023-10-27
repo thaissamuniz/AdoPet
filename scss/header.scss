@@ -21,7 +21,27 @@
     position: absolute;
     right: 3px;
     margin-right: 37px;
+}
 
+.profile__modal {
+    display: none;
+    background-color: rgb(160, 242, 221);
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+}
+
+.profile__modal--item {
+    display: block;
+    color: coral;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.profile__modal--logout {
+    margin-bottom: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -35,12 +55,16 @@
             display: block;
             margin-left: 49px;
             margin-right: 65px;
-           
+
         }
 
         &__a--home {
             margin-left: 0;
             margin-right: 69px;
         }
+    }
+    
+    .profile__modal {
+      height: 80px;
     }
 }

@@ -2,6 +2,15 @@
   display: none;
   align-self: flex-end;
   margin-right: 29px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user__options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-self: flex-end;
 }
 
 #createPetIcon {
@@ -13,6 +22,21 @@
   transition: background-size 0.2s ease-out;
 }
 #createPetIcon:hover {
+  background-size: 42px;
+}
+
+.logout {
+  background-image: url("../assets/img/icons/logout.png");
+  background-size: 40px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  display: block;
+  margin-right: 32px;
+  transition: background-size 0.2s ease-out;
+  background-repeat: no-repeat;
+}
+.logout:hover {
   background-size: 42px;
 }
 

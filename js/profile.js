@@ -16,6 +16,10 @@ const userCity = localStorage.getItem("city");
 const userAbout = localStorage.getItem("about");
 const userId = localStorage.getItem("id");
 
+logout.addEventListener('click', () => {
+    localStorage.clear();
+});
+
 function setUserInfo() {
     if (userName) {
         name.value = userName;
