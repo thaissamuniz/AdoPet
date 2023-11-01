@@ -1,6 +1,6 @@
-async function getAnimals() {
+async function getAnimals(order) {
     try {
-        const response = await fetch('http://localhost:3000/pets');
+        const response = await fetch(`http://localhost:3000/pets?order=${order}`);
         const responseJson = await response.json();
         return responseJson;
 

@@ -50,13 +50,23 @@ function newCard(name, age, size, description, city, state, id) {
 
     return cards;
 }
+async function getAnimals(orderNumber) {
+    return await apps.getAnimals(orderNumber);
+}
 
-async function createCards() {
-    let animais = await apps.getAnimals();
-
+async function createCards(ord) {
+    let animais = await getAnimals(ord);
     animais.forEach(animal => {
         newCard(animal.name, animal.age, animal.size, animal.details, animal.city, animal.state, animal._id);
     });
 }
 
-createCards();
+document.addEventListener('DOMContentLoaded', () => {
+    createCards(1);
+});
+
+orderPets.addEventListener('change', () => {
+    let order = Number(orderPets.value);
+    cards.innerHTML = '';
+    createCards(order);
+});
