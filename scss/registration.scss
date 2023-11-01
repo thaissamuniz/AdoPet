@@ -57,11 +57,24 @@ body {
 }
 
 .password {
-    background-image: url(../assets/img/icons/Vector.svg);
     background-repeat: no-repeat;
-    background-position: right center;
-    background-origin: content-box;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 30px;
+    left: 123px;
+    will-change: background-image;
+    transition: background-image 0.4s ease-in-out;
+}
 
+.pass__hidden {
+    background-image: url(../assets/img/icons/Vector.svg);
+}
+
+.pass__open {
+    background-image: url(../assets/img/icons/visible.png);
+    opacity: 0.4;
 }
 
 .main__input {

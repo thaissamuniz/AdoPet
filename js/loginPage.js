@@ -4,6 +4,11 @@ import { utils } from "./utils.js";
 const form = document.querySelector('.main__form');
 const emailInput = document.querySelector('.email');
 
+passwordHidden.addEventListener('click', () => {
+    password.type == 'password' ? password.type = 'text' : password.type = 'password';
+    passwordHidden.classList.toggle('pass__open');
+});
+
 emailInput.addEventListener('focusout', () => {
     let divMessage = document.querySelector('.main__error--msg');
     if (!utils.validateEmail(emailInput.value)) {

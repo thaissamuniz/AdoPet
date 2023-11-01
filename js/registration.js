@@ -5,7 +5,7 @@ const form = document.querySelector('.main__form');
 
 const emailInput = document.querySelector('.email');
 const nameInput = document.querySelector('.name');
-const passwordInput = document.querySelector('.password');
+const passwordInput = document.querySelector('.pass');
 const confPassInput = document.querySelector('.confirmPass');
 const accountType = document.querySelector('#accountType');
 const msgP = document.querySelector('.main__info--msg');
