@@ -22,7 +22,7 @@ emailInput.addEventListener('focusout', () => {
 form.addEventListener('submit', async e => {
     e.preventDefault();
 
-    const password = document.querySelector('.password');
+    const password = document.querySelector('#password');
     const div = document.querySelector('.main__login--msg');
 
     const userEmail = emailInput.value;
