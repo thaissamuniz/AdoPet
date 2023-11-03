@@ -26,7 +26,7 @@ function newCard(name, age, size, description, city, state, id) {
     const template =
         `
           <div class="card__contents">
-            <img src="../../../assets/img/Imagem Dunga.svg" alt="Foto do bichinho" class="card__img">
+            <img src="../../../assets/img/pets/Imagem Dunga.svg" alt="Foto do bichinho" class="card__img">
             <div class="card__details">
                 <div>
                     <a class="${editClass}" id="edit" href="editPage.html?id=${id}"></a>
@@ -73,3 +73,8 @@ orderPets.addEventListener('change', () => {
     cards.innerHTML = '';
     createCards(order);
 });
+
+const profilePic = localStorage.getItem('image');
+if(profilePic){
+    userPicTop.src = profilePic;
+}

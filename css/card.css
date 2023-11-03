@@ -27,9 +27,7 @@
   margin-bottom: 8px;
 }
 .card__img {
-  margin-top: 24px;
-  margin-right: 16px;
-  margin-bottom: 24px;
+  margin: 24px 14px;
 }
 .card__details {
   margin-top: 16px;

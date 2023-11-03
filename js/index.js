@@ -91,7 +91,7 @@ async function getUser(id) {
     return responseJson;
 }
 
-async function updateUser(id, name, tel, local, about) {
+async function updateUser(id, picture, name, tel, local, about) {
     try {
         const requestOptions = {
             method: 'PUT',
@@ -99,6 +99,7 @@ async function updateUser(id, name, tel, local, about) {
                 'Content-type': 'application/json'
             },
             body: JSON.stringify({
+                picture: picture,
                 name: name,
                 tel: tel,
                 city: local,
