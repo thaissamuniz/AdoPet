@@ -5,6 +5,7 @@ let editClass;
 const profile = document.querySelector('.header__a--user');
 const cards = document.createElement('div');
 cards.classList.add('cards');
+cards.classList.add('fade-in');
 
 profile.addEventListener('click', () => {
     utils.checkLogin('../../profile.html');
@@ -13,6 +14,7 @@ profile.addEventListener('click', () => {
 messageBox.addEventListener('click', () => {
     utils.checkLogin('../../message.html');
 });
+
 
 function newCard(name, age, size, description, city, state, id) {
     const role = localStorage.getItem("role");
@@ -62,7 +64,8 @@ async function createCards(ord) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    createCards(1);
+    setTimeout(() => skeletonCards.style.display = 'none', 5)
+    setTimeout(() => createCards(1), 5)
 });
 
 orderPets.addEventListener('change', () => {
