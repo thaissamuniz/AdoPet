@@ -8,7 +8,6 @@ let tel = document.querySelector('.tel');
 let local = document.querySelector('.local');
 let about = document.getElementById('message');
 let form = document.querySelector('.forms');
-// let image = document.querySelector('#prof__pic').src;
 let image;
 let galeria = document.querySelector('.user__galery--hidden');
 
@@ -44,6 +43,14 @@ function setUserInfo() {
 
 form.addEventListener('submit', async e => {
     e.preventDefault();
+
+    if (name.value == '') {
+        profileWarnFail.style.display = 'block';
+        overlay.style.display = 'block';
+        return
+    }
+
+    image == undefined ? image = userPicture : image = image;
     const response = await apps.updateUser(userId, image, name.value, tel.value, local.value, about.value);
 
     if (response.status == 200) {
@@ -52,9 +59,11 @@ form.addEventListener('submit', async e => {
         localStorage.setItem("tel", tel.value);
         localStorage.setItem("city", local.value);
         localStorage.setItem("about", about.value);
-        alert('dados atualizados com sucesso!');
+        profileWarnSuccess.style.display = 'block';
+        overlay.style.display = 'block';
     } else {
-        alert('erro ao atualizar os dados.');
+        profileWarnFail.style.display = 'block';
+        overlay.style.display = 'block';
     }
 });
 
@@ -72,5 +81,14 @@ galeria.addEventListener('click', (e) => {
     let alvo = e.target;
     prof__pic.src = alvo.src;
     image = alvo.src
-    userGalery.classList.remove('user__galery--open');
+});
+
+profileWarnBtnSuccess.addEventListener('click', () => {
+    profileWarnSuccess.style.display = 'none';
+    overlay.style.display = 'none';
+    window.location.reload();
+});
+profileWarnBtnFail.addEventListener('click', () => {
+    profileWarnFail.style.display = 'none';
+    overlay.style.display = 'none';
 });

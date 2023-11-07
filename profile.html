@@ -77,7 +77,7 @@
             <input class="id" type="number">
 
             <label for="" class="forms__label">Nome</label>
-            <input type="text" required class="forms__input name">
+            <input type="text" required class="forms__input name" readonly>
 
             <label for="" class="forms__label">Telefone</label>
             <input type="tel" class="forms__input tel">
@@ -90,6 +90,17 @@
 
             <button class="button">Salvar</button>
         </form>
+        <div class="profile__warn profile__warn--success scale-in-center" id="profileWarnSuccess">
+            <p class="profile__warn--text">Dados atualizados com sucesso!</p>
+            <p class="button profile__warn--btn" id="profileWarnBtnSuccess">OK!</p>
+        </div>
+        <div class="profile__warn profile__warn--fail scale-in-center" id="profileWarnFail">
+            <p class="profile__warn--text">Algo deu errado ao atualizar os dados. verifique se todas as
+                informações estão corretas e
+                tente novamente.</p>
+            <p class="button profile__warn--btn" id="profileWarnBtnFail">OK!</p>
+        </div>
+        <div class="overlay" id="overlay"></div>
     </main>
     <footer class="footer">
         <p class="footer__title">2022 - Desenvolvido por Thaissa</p>
