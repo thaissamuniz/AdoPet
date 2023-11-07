@@ -9,7 +9,7 @@ async function getAnimals(order) {
     }
 }
 
-async function updateAnimal(id, name, age, size, city, state, details) {
+async function updateAnimal(id, image, name, age, size, city, state, details) {
     try {
         const requestOptions = {
             method: 'PUT',
@@ -17,6 +17,7 @@ async function updateAnimal(id, name, age, size, city, state, details) {
                 'Content-type': 'application/json'
             },
             body: JSON.stringify({
+                image: image,
                 name: name,
                 age: age,
                 size: size,
@@ -45,13 +46,14 @@ async function getAnimalById(id) {
     }
 }
 
-async function createAnimal(name, age, size, city, state, details, shelter) {
+async function createAnimal(image, name, age, size, city, state, details, shelter) {
     const requestOptions = {
         method: 'POST',
         headers: {
             'Content-type': 'application/json'
         },
         body: JSON.stringify({
+            image: image,
             name: name,
             age: age,
             size: size,

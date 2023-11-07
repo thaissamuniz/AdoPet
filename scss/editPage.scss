@@ -1,9 +1,31 @@
-.forms__radios {
+.pet__image--tittle {
+    color: red;
     display: flex;
     justify-content: center;
-    gap: 5px;
+    align-items: center;
+    flex-direction: column;}
+
+.card__img--edit {
+    width: 150px;
+    height: 150px;
+    background-image: url("../assets/img/icons/animais-de-estimacao.png");
+    background-position: center;
+    background-size: 130px;
+    background-repeat: no-repeat;
 }
 
+.pet__galery{
+    width: 120px;
+}
+.pets__galery{
+    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
 #statesSelect {
     width: 80px;
 }
@@ -21,6 +43,9 @@
 
     #petCity {
         width: 300px;
+    }
+    .pet__galery{
+        width: 111px;
     }
 
     #statesSelect {

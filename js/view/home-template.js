@@ -16,7 +16,7 @@ messageBox.addEventListener('click', () => {
 });
 
 
-function newCard(name, age, size, description, city, state, id) {
+function newCard(image, name, age, size, description, city, state, id) {
     const role = localStorage.getItem("role");
     editClass = role == "admin" ? "card__edit--admin" : "card__edit";
     const main = document.querySelector('.main');
@@ -26,7 +26,7 @@ function newCard(name, age, size, description, city, state, id) {
     const template =
         `
           <div class="card__contents">
-            <img src="../../../assets/img/pets/Imagem Dunga.svg" alt="Foto do bichinho" class="card__img">
+            <img src="${image}" alt="Foto do bichinho" class="card__img">
             <div class="card__details">
                 <div>
                     <a class="${editClass}" id="edit" href="editPage.html?id=${id}"></a>
@@ -59,7 +59,7 @@ async function getAnimals(orderNumber) {
 async function createCards(ord) {
     let animais = await getAnimals(ord);
     animais.forEach(animal => {
-        newCard(animal.name, animal.age, animal.size, animal.details, animal.city, animal.state, animal._id);
+        newCard(animal.image, animal.name, animal.age, animal.size, animal.details, animal.city, animal.state, animal._id);
     });
 }
 
@@ -75,6 +75,6 @@ orderPets.addEventListener('change', () => {
 });
 
 const profilePic = localStorage.getItem('image');
-if(profilePic){
+if (profilePic) {
     userPicTop.src = profilePic;
 }

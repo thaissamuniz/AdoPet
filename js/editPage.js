@@ -86,6 +86,7 @@ states.forEach(state => {
 async function getAnimalById() {
     let animal = await apps.getAnimalById(id);
 
+    petImage.src = animal.image;
     petName.value = animal.name;
     petAge.value = animal.age;
     petSizeOptions.value = animal.size;
@@ -95,11 +96,11 @@ async function getAnimalById() {
 }
 
 async function updateAnimal() {
-    await apps.updateAnimal(id, petName.value, petAge.value, petSizeOptions.value, petCity.value, statesSelect.value, petAbout.value);
+    await apps.updateAnimal(id, petImage.src, petName.value, petAge.value, petSizeOptions.value, petCity.value, statesSelect.value, petAbout.value);
 }
 
 async function createAnimal() {
-    return await apps.createAnimal(petName.value, petAge.value, petSizeOptions.value, petCity.value, statesSelect.value, petAbout.value, idAdmin);
+    return await apps.createAnimal(petImage.src, petName.value, petAge.value, petSizeOptions.value, petCity.value, statesSelect.value, petAbout.value, idAdmin);
 
 }
 
@@ -123,3 +124,16 @@ if (id) {
         }
     });
 }
+
+pets.addEventListener('click', () => {
+    if (petsGalery.style.maxHeight) {
+        petsGalery.style.maxHeight = null;
+    } else {
+        petsGalery.style.maxHeight = petsGalery.scrollHeight + "px";
+    }
+})
+
+petsGalery.addEventListener('click', (e) => {
+    let clicked = e.target;
+    petImage.src = clicked.src;
+});

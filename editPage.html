@@ -37,7 +37,25 @@
         <h2 class="main__title">Conte um pouco sobre o animal:</h2>
 
         <form class="forms" method="post" id="petForm">
-            <img src="./assets/img/Imagem Dunga.svg" alt="Foto do bicinho" class="card__img card__img--edit">
+            <label for="petImage" class="pet__image--tittle" id="pets">
+                <img src="" class="card__img card__img--edit" id="petImage">
+                clique para editar a foto
+            </label>
+            <div class="pets__galery" id="petsGalery">
+                <img class="pet__galery"
+                    src="https://raw.githubusercontent.com/thaissamuniz/AdoPet/d25051f63d3fb0b03151ae829a59d6877504dfb0/assets/img/pets/ImagemSid.svg"
+                    alt="cachorro">
+                <img class="pet__galery"
+                    src="https://raw.githubusercontent.com/thaissamuniz/AdoPet/d25051f63d3fb0b03151ae829a59d6877504dfb0/assets/img/pets/ImagemYoda.svg"
+                    alt="gato">
+                <img class="pet__galery"
+                    src="https://raw.githubusercontent.com/thaissamuniz/AdoPet/d25051f63d3fb0b03151ae829a59d6877504dfb0/assets/img/pets/ImagemZelda.svg"
+                    alt="gato">
+
+                <img class="pet__galery" src="https://raw.githubusercontent.com/thaissamuniz/AdoPet/d25051f63d3fb0b03151ae829a59d6877504dfb0/assets/img/pets/ImagemFiona.svg"
+                    alt="">
+            </div>
+
             <label for="" class="forms__label">Nome</label>
             <input type="text" id="petName" required placeholder="Insira o nome do bichinho" class="forms__input"
                 autofocus>
