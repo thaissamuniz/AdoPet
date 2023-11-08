@@ -58,14 +58,16 @@ async function getAnimals(orderNumber) {
 
 async function createCards(ord) {
     let animais = await getAnimals(ord);
-    animais.forEach(animal => {
-        newCard(animal.image, animal.name, animal.age, animal.size, animal.details, animal.city, animal.state, animal._id);
-    });
+    if (animais) {
+        skeletonCards.style.display = 'none';
+        animais.forEach(animal => {
+            newCard(animal.image, animal.name, animal.age, animal.size, animal.details, animal.city, animal.state, animal._id);
+        });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => skeletonCards.style.display = 'none', 5)
-    setTimeout(() => createCards(1), 5)
+    createCards(1)
 });
 
 orderPets.addEventListener('change', () => {
