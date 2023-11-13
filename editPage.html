@@ -29,7 +29,7 @@
         <a href="home.html" class="header__a--home"><img src="assets/img/icons/home.svg" alt="icone home"></a>
         <a href="message.html" class="header__a--msg"><img src="assets/img/icons/msg.svg" alt="icone de mensagem"></a>
         <a href="profile.html" class="header__a--user"><img src="assets/img/icons/Usuário.svg"
-                alt="icone do usuário"></a>
+                alt="icone do usuário" id="userPicTop"></a>
 
     </header>
     <main class="main__forms">
@@ -52,7 +52,8 @@
                     src="https://raw.githubusercontent.com/thaissamuniz/AdoPet/d25051f63d3fb0b03151ae829a59d6877504dfb0/assets/img/pets/ImagemZelda.svg"
                     alt="gato">
 
-                <img class="pet__galery" src="https://raw.githubusercontent.com/thaissamuniz/AdoPet/d25051f63d3fb0b03151ae829a59d6877504dfb0/assets/img/pets/ImagemFiona.svg"
+                <img class="pet__galery"
+                    src="https://raw.githubusercontent.com/thaissamuniz/AdoPet/d25051f63d3fb0b03151ae829a59d6877504dfb0/assets/img/pets/ImagemFiona.svg"
                     alt="">
             </div>
 
@@ -107,6 +108,17 @@
 
             <button class="button" id="sendBtn">Salvar</button>
         </form>
+
+        <div class="warn warn__success scale-in-center" id="editWarnSuccess">
+            <p class="warn__text">Dados salvos com sucesso!</p>
+            <p class="button warn__btn" id="editWarnBtnSuccess">OK!</p>
+        </div>
+        <div class="warn warn__fail scale-in-center" id="editWarnFail">
+            <p class="profile__warn--text">Algo deu errado. verifique se todas as
+                informações estão corretas e tente novamente.</p>
+            <p class="button warn__btn" id="editWarnBtnFail">OK!</p>
+        </div>
+        <div class="overlay" id="overlay"></div>
     </main>
     <footer class="footer">
         <p class="footer__title">2022 - Desenvolvido por Thaissa</p>

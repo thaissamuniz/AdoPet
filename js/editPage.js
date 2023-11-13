@@ -101,7 +101,6 @@ async function updateAnimal() {
 
 async function createAnimal() {
     return await apps.createAnimal(petImage.src, petName.value, petAge.value, petSizeOptions.value, petCity.value, statesSelect.value, petAbout.value, idAdmin);
-
 }
 
 if (id) {
@@ -114,13 +113,22 @@ if (id) {
     petForm.addEventListener('submit', async e => {
         e.preventDefault();
         console.log(petName.value, petAge.value, petSizeOptions.value, petCity.value, statesSelect.value, petAbout.value, idAdmin);
+        if (petImage.src == 'http://127.0.0.1:5500/editPage.html') {
+            editWarnFail.style.display = 'block';
+            overlay.style.display = 'block';
+            return
+        }
+
         const response = await createAnimal();
         if (response.status == 201) {
-            alert('animal cadastrado com sucesso.');
+            editWarnSuccess.style.display = 'block';
+            overlay.style.display = 'block';
         } else {
             console.log(response)
             console.log(response.status)
             alert('erro ao cadastrar animal. todos os campos são obrigatórios.');
+            editWarnFail.style.display = 'block';
+            overlay.style.display = 'block';
         }
     });
 }
@@ -137,3 +145,16 @@ petsGalery.addEventListener('click', (e) => {
     let clicked = e.target;
     petImage.src = clicked.src;
 });
+
+editWarnBtnSuccess.addEventListener('click', () => {
+    editWarnSuccess.style.display = 'none';
+    overlay.style.display = 'none';
+    window.location.reload();
+});
+
+editWarnBtnFail.addEventListener('click', () => {
+    editWarnFail.style.display = 'none';
+    overlay.style.display = 'none';
+});
+
+userPicTop.src = localStorage.getItem('image');
