@@ -108,6 +108,8 @@ if (id) {
     petForm.addEventListener('submit', async e => {
         e.preventDefault();
         await updateAnimal();
+        editWarnSuccess.style.display = 'block';
+        overlay.style.display = 'block';
     });
 } else {
     petForm.addEventListener('submit', async e => {
