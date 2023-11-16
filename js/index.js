@@ -1,6 +1,8 @@
+const URL = "https://adopet-api-y6tv.onrender.com";
+
 async function getAnimals(order) {
     try {
-        const response = await fetch(`http://localhost:3000/pets?order=${order}`);
+        const response = await fetch(URL + `/pets?order=${order}`);
         const responseJson = await response.json();
         return responseJson;
 
@@ -27,7 +29,7 @@ async function updateAnimal(id, image, name, age, size, city, state, details) {
             })
         }
 
-        const response = await fetch(`http://localhost:3000/pets/${id}`, requestOptions);
+        const response = await fetch(URL + `/pets/${id}`, requestOptions);
         return response;
 
     } catch (error) {
@@ -37,7 +39,7 @@ async function updateAnimal(id, image, name, age, size, city, state, details) {
 
 async function getAnimalById(id) {
     try {
-        const response = await fetch(`http://localhost:3000/pets/${id}`);
+        const response = await fetch(URL + `/pets/${id}`);
         const responseJson = await response.json();
         return responseJson;
 
@@ -64,7 +66,7 @@ async function createAnimal(image, name, age, size, city, state, details, shelte
         })
     }
 
-    const response = await fetch('http://localhost:3000/pets', requestOptions);
+    const response = await fetch(URL + '/pets', requestOptions);
     return response;
 }
 
@@ -80,7 +82,7 @@ async function login(email, password) {
                 password: password
             })
         }
-        const response = await fetch('http://localhost:3000/login/user', requestOptions);
+        const response = await fetch(URL+'/login/user', requestOptions);
         return response;
     } catch (error) {
 
@@ -88,7 +90,7 @@ async function login(email, password) {
 }
 
 async function getUser(id) {
-    const response = await fetch(`http://localhost:3000/users/${id}`);
+    const response = await fetch(URL+`/users/${id}`);
     const responseJson = await response.json();
     return responseJson;
 }
@@ -109,7 +111,7 @@ async function updateUser(id, picture, name, tel, local, about) {
             })
         }
 
-        const response = await fetch(`http://localhost:3000/users/${id}`, requestOptions);
+        const response = await fetch(URL+`/users/${id}`, requestOptions);
         return response;
     } catch (error) {
         console.error(error);
@@ -130,7 +132,7 @@ async function createUser(name, email, password, accountType, role) {
             role: role,
         })
     }
-    const response = await fetch('http://localhost:3000/users', requestOptions);
+    const response = await fetch(URL+'/users', requestOptions);
     return response;
 }
 
