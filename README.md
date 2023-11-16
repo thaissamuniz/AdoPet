@@ -1,5 +1,5 @@
 <p align="center">
-  # ![logo da adopet](./assets/img/LogoR.svg)
+  <img src="./assets/img/LogoR.svg" alt="logo da adopet">
 </p>
 
 A Adopet é uma empresa fictícia que tem o intuito de conectar pessoas que desejam adotar animais de estimação aos abrigos.
