@@ -1,12 +1,40 @@
-# Adotepet
+# ![logo da adopet](./assets/img/LogoR.svg)
 
 
-Desafio Alura Front-End de desenvolvimento de uma página web. Neste desafio foi desenvolvida uma página web responsiva, utilizando as tecnologias HTML, SASS e JS.
+A Adopet é uma empresa fictícia que tem o intuito de conectar pessoas que desejam adotar animais de estimação aos abrigos.
 
-abrir a pasta Adopet no vscode e 
-rodar o json server: 
-```js
-json-server --watch db.json
-```
 
-Rodar: browser-sync start --server --file . --host --port 5000 --startPath ./index.html ou através do Live Server do vscode.
+# Sobre
+
+Esse projeto surgiu atraves da 4ª edição do desafio de frontend da [Alura](alura.com).
+o layout foi desenvolvido responsivamente, para telas mobile, tablets e desktops utilizando a técnica de mobile first. você pode conferir o layout proposto [aqui](https://www.figma.com/file/TlfkDoIu8uyjZNla1T8TpH/Challenge---Adopet?type=design&node-id=518-11&mode=design&t=D7XtrSZvzeuWPoMA-0). Esse projeto consome uma REST API desenvolvida por mim, que você pode saber mais clicando aqui. (em breve será disponibilizada)
+
+# Features
+
+* criar conta de usuario
+* criar conta de  admin
+* caso a conta seja de admin, você pode:
+* * cadastrar novos animais para adoção
+* * editar os animais já cadastrados
+* ordernar a exibição da lista de animais
+* visualizar e editar seu perfil
+
+
+# Como usar
+
+
+* Acesse o site: https://adopet....
+
+ você pode fazer login com as credenciais:
+* para usuario comum:
+* * email: user@user.com
+* * senha: 123456
+* para admin:
+* * email: admin@admin.com
+* * senha: 123456
+
+ou ainda, se preferir, pode criar seu próprio cadastro!
+
+# Tecnologias
+
+HTML, SASS, Javascript
