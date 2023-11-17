@@ -24,7 +24,7 @@ o layout foi desenvolvido responsivamente, para telas mobile, tablets e desktops
 # Como usar
 
 
-* Acesse o site: https://adopet....
+* Acesse o site: adopet-alpha.vercel.app
 
  você pode fazer login com as credenciais:
 * para usuario comum:
