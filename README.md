@@ -8,7 +8,7 @@ A Adopet é uma empresa fictícia que tem o intuito de conectar pessoas que dese
 # Sobre
 
 Esse projeto surgiu atraves da 4ª edição do desafio de frontend da [Alura](alura.com).
-o layout foi desenvolvido responsivamente, para telas mobile, tablets e desktops utilizando a técnica de mobile first. você pode conferir o layout proposto [aqui](https://www.figma.com/file/TlfkDoIu8uyjZNla1T8TpH/Challenge---Adopet?type=design&node-id=518-11&mode=design&t=D7XtrSZvzeuWPoMA-0). Esse projeto consome uma REST API desenvolvida por mim, que você pode saber mais clicando aqui. (em breve será disponibilizada)
+o layout foi desenvolvido responsivamente, para telas mobile, tablets e desktops utilizando a técnica de mobile first. você pode conferir o layout proposto [aqui](https://www.figma.com/file/TlfkDoIu8uyjZNla1T8TpH/Challenge---Adopet?type=design&node-id=518-11&mode=design&t=D7XtrSZvzeuWPoMA-0). Esse projeto consome uma REST API desenvolvida por mim, que você pode saber mais clicando [aqui](https://github.com/thaissamuniz/adopet-api)
 
 # Features
 
