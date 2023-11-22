@@ -16,10 +16,10 @@ messageBox.addEventListener('click', () => {
 });
 
 
-function newCard(image, name, age, size, description, city, state, id) {
-    const role = localStorage.getItem("role");
-    editClass = role == "admin" ? "card__edit--admin" : "card__edit";
+function newCard(image, name, age, size, description, city, state, id, shelterId) {
     const main = document.querySelector('.main');
+    const userId = localStorage.getItem("id");
+    editClass = userId == shelterId ? "card__edit--admin" : "card__edit";
     const article = document.createElement('article');
     article.classList.add('card');
 
@@ -61,7 +61,7 @@ async function createCards(ord) {
     if (animais) {
         skeletonCards.style.display = 'none';
         animais.forEach(animal => {
-            newCard(animal.image, animal.name, animal.age, animal.size, animal.details, animal.city, animal.state, animal._id);
+            newCard(animal.image, animal.name, animal.age, animal.size, animal.details, animal.city, animal.state, animal._id, animal.shelter);
         });
     }
 }
