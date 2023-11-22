@@ -19,6 +19,10 @@ emailInput.addEventListener('focusout', () => {
     }
 });
 
+btn.addEventListener('click', () => {
+    loading.style.display = 'block';
+})
+
 form.addEventListener('submit', async e => {
     e.preventDefault();
 

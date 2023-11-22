@@ -28,6 +28,7 @@ body {
     background-image: url(../assets/img/Forma-lado.svg);
     background-repeat: no-repeat;
     background-position-y: 205px;
+    min-height: 640px;
 }
 
 .main__content {
@@ -156,6 +157,7 @@ select {
         background-image: url(../assets/img/Forma\ 2.svg);
         background-size: 121px;
         background-position-y: center;
+        min-height: 844px;
 
         &__logo {
             width: 252px;
