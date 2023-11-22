@@ -59,6 +59,9 @@ body {
     margin-top: 40px;
     width: 164px;
   }
+  .button:hover {
+    cursor: pointer;
+  }
 }
 
 /*# sourceMappingURL=base.css.map */
