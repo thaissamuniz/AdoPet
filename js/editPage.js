@@ -114,12 +114,6 @@ if (id) {
 } else {
     petForm.addEventListener('submit', async e => {
         e.preventDefault();
-        if (petImage.src == 'http://127.0.0.1:5500/editPage.html') {
-            editWarnFail.style.display = 'block';
-            overlay.style.display = 'block';
-            return
-        }
-
         const response = await createAnimal();
         if (response.status == 201) {
             editWarnSuccess.style.display = 'block';

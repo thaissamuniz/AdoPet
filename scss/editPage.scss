@@ -1,17 +1,15 @@
-.pet__image--tittle {
+.pet__image--title {
     color: red;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;}
+    flex-direction: column;
+}
 
 .card__img--edit {
     width: 150px;
     height: 150px;
-    background-image: url("../assets/img/icons/animais-de-estimacao.png");
-    background-position: center;
-    background-size: 130px;
-    background-repeat: no-repeat;
+   
 }
 
 .pet__galery{
