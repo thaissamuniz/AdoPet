@@ -7,7 +7,7 @@ async function getAnimals(order) {
         return responseJson;
 
     } catch (error) {
-        console.error(error);
+        console.error("algo deu errado.");
     }
 }
 
@@ -33,7 +33,7 @@ async function updateAnimal(id, image, name, age, size, city, state, details) {
         return response;
 
     } catch (error) {
-        console.error(error);
+        console.error("algo deu errado.");
     }
 }
 
@@ -44,7 +44,7 @@ async function getAnimalById(id) {
         return responseJson;
 
     } catch (error) {
-        console.error(error);
+        console.error("algo deu errado.");
     }
 }
 
@@ -82,15 +82,15 @@ async function login(email, password) {
                 password: password
             })
         }
-        const response = await fetch(URL+'/login/user', requestOptions);
+        const response = await fetch(URL + '/login/user', requestOptions);
         return response;
     } catch (error) {
-
+        console.error("algo deu errado.");
     }
 }
 
 async function getUser(id) {
-    const response = await fetch(URL+`/users/${id}`);
+    const response = await fetch(URL + `/users/${id}`);
     const responseJson = await response.json();
     return responseJson;
 }
@@ -111,10 +111,10 @@ async function updateUser(id, picture, name, tel, local, about) {
             })
         }
 
-        const response = await fetch(URL+`/users/${id}`, requestOptions);
+        const response = await fetch(URL + `/users/${id}`, requestOptions);
         return response;
     } catch (error) {
-        console.error(error);
+        console.error("algo deu errado.");
     }
 }
 
@@ -132,7 +132,7 @@ async function createUser(name, email, password, accountType, role) {
             role: role,
         })
     }
-    const response = await fetch(URL+'/users', requestOptions);
+    const response = await fetch(URL + '/users', requestOptions);
     return response;
 }
 

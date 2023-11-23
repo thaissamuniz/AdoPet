@@ -21,7 +21,7 @@ emailInput.addEventListener('focusout', () => {
 
 btn.addEventListener('click', () => {
     loading.style.display = 'block';
-})
+});
 
 form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -37,6 +37,7 @@ form.addEventListener('submit', async e => {
     if (response.status !== 200) {
         div.innerHTML = 'email ou senha inválidos.';
         div.style.display = 'block';
+        loading.style.display = 'none';
     } else {
         const responseText = await response.text();
         const responseJson = JSON.parse(responseText);
